@@ -8,12 +8,16 @@
 
 import UIKit
 
-class HomeTimelineViewController: UIViewController, UITableViewDataSource {
+class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var tweetArray = [Tweet]()
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.delegate = self
         
         self.tableView.dataSource = self
         
@@ -23,8 +27,11 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource {
                 guard let tweets = tweets else {fatalError("Tweets came back nil")}
                 
                 for tweet in tweets {
+                    
+                    Tweets.shared.add(tweet: tweet)
                     print(tweet.text)
                 }
+            tweetArray = Tweets.shared.allTweets
             }
             
         }
@@ -32,17 +39,25 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return Tweets.shared.count()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "Indexpath: \(indexPath.row)"
+        let singleTweet = tweetArray[indexPath.row]
+        
+        cell.textLabel?.text = singleTweet.text
+        
+        cell.detailTextLabel?.text = singleTweet.user?.name
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected row at \(indexPath.row)")
     }
 
 }

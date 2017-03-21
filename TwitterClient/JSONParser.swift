@@ -12,7 +12,7 @@ typealias JSONParserCallback = (Bool, [Tweet]?)->()
 
 class JSONParser {
     
-    static  var sampleJSONData: Data {
+    static var sampleJSONData: Data {
         guard let tweetJSONPath = Bundle.main.url(forResource: "tweet", withExtension: "json") else {fatalError("Tweet.json does not exist in this bundle")}
         
         do {

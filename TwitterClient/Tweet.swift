@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Tweet {    
+class Tweet {
     let text: String
     let id: String
     
