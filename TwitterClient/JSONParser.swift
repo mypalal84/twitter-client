@@ -48,9 +48,5 @@ class JSONParser {
             print("Error Searializing JSON")
             callback(false, nil)
         }
-        
     }
-    
-    
-    
 }
