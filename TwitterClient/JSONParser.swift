@@ -32,6 +32,7 @@ class JSONParser {
         
         do{
             if let rootObject = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]] {
+                
                 var tweets = [Tweet]()
                 
                 for tweetDictionary in rootObject {

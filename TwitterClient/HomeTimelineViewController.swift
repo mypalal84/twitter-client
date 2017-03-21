@@ -26,6 +26,8 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
             if(success) {
                 guard let tweets = tweets else {fatalError("Tweets came back nil")}
                 
+                Tweets.shared.removeall()
+                
                 for tweet in tweets {
                     
                     Tweets.shared.add(tweet: tweet)
