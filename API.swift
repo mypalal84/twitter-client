@@ -69,16 +69,25 @@ class API {
                 
                 switch response.statusCode {
                 case 200...299:
-                    if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                        let user = User(json: userJSON)
-                        callback(user)
-               
+                    JSONParser.statusCodeResponse(data: data, callback: { (success, tweets) in
+                        
+                        if success {
+                            callback(tweets)
+                        }
+                    })
+                case 400...499:
+                    print("Error from our client")
+                case 500...599:
+                    print("Server-side error")
                     
-                
-                    }
                 default:
                     print("Error: response came back with statusCode: \(response.statusCode)")
                     callback(nil)
+               
+                    
+                
+                    
+                
                 }
             })
         }
@@ -102,21 +111,29 @@ class API {
                 
                 guard let data = data else { callback(nil); return }
                 
-                if response.statusCode >= 200 && response.statusCode < 300 {
+                switch response.statusCode {
                     
+                case 200...299:
                     JSONParser.tweetsFrom(data: data, callback: { (success, tweets) in
-                        
+
                         if success {
                             callback(tweets)
                         }
                     })
-                } else {
-                    print("Something else went terribly wrong! We have a status code outside 200-299.")
+                case 400...499:
+                    print("Error from our client")
+                case 500...599:
+                    print("Server-side error")
+                    
+                default:
+                    print("Error: response came back with statusCode: \(response.statusCode)")
                     callback(nil)
+                
                 }
             })
         }
     }
+    
     func getTweets(callback: @escaping TweetsCallback) {
         
         if self.account == nil {
