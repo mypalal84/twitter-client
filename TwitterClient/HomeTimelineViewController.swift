@@ -18,21 +18,59 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "My Timeline"
         
         self.tableView.delegate = self
         
         self.tableView.dataSource = self
         
+        self.tableView.estimatedRowHeight = 50
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
         updateTimeline()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "showDetailSegue" {
+            
+        if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+            let selectedTweet = self.tweetArray[selectedIndex]
+                
+            guard let destinationContoller = segue.destination as? TweetDetailViewController else { return }
+            
+            destinationContoller.tweet = selectedTweet
+            
+            }
+            
+        }
+        
+        if segue.identifier == "showProfileSegue" {
+            
+            //guard let destinationConroller = segue.destination as? ProfileViewController else { return }
+            
+        }
+        
+    }
+    
+    
     func updateTimeline() {
+        
+        self.activityIndicator.startAnimating()
         
         API.shared.getTweets { (tweets) in
             OperationQueue.main.addOperation {
                 self.tweetArray = tweets  ?? []
+                self.activityIndicator.stopAnimating()
             }
         }        
     }
@@ -43,19 +81,15 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TweetCell
+            
+            cell.tweetText.text = tweetArray[indexPath.row].text
         
-        let singleTweet = tweetArray[indexPath.row]
-        
-        cell.textLabel?.text = singleTweet.text
-        
-        cell.detailTextLabel?.text = singleTweet.user?.name
-        
-        
-        return cell
+            return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected row at \(indexPath.row)")
     }
+ */
 }
