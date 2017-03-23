@@ -54,7 +54,14 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
             
         }
         
+        if segue.identifier == "showProfileSegue" {
+            
+            //guard let destinationConroller = segue.destination as? ProfileViewController else { return }
+            
+        }
+        
     }
+    
     
     func updateTimeline() {
         

@@ -17,6 +17,7 @@ class Tweet {
     
     init?(json: [String: Any]) {
         if let text = json["text"] as? String, let id = json["id_str"] as? String, let retweetCount = json["retweet_count"] as? Int {
+            
             self.text = text
             self.id = id
             self.retweetCount = retweetCount
