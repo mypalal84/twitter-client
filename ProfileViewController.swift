@@ -10,19 +10,20 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    var user : User!
+    
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var profileImageURL: UILabel!
     
     @IBOutlet weak var location: UILabel!
 
-    var user : User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.name.text = (user.name)
-        //self.profileImageURL.text = (user.profileImageURL)
-        //self.location.text = (user.location)
+        name.text = "Username: \(user.screenName)"
+        location.text = "Location: \(user.location)"
         
     }
+    
+    
 }
