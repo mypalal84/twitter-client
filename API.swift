@@ -92,11 +92,11 @@ class API {
             })
         }
     }
-    private func updateTimeLine(callback: @escaping TweetsCallback) {
+    private func updateTimeLine(url: String, callback: @escaping TweetsCallback) {
         
-        let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+//        let url = URL(string: "")
         
-        if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil) {
+        if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: URL(string: url), parameters: nil) {
             
             request.account = self.account
             
@@ -142,13 +142,31 @@ class API {
                 
                 if let account = account {
                     self.account = account
-                    self.updateTimeLine(callback: { (tweets) in
+                    self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/home_timeline.json", callback: { (tweets) in
                         callback(tweets)
-                    })
-                }
+                })
+            }
+        })
+    }  else {
+            self.updateTimeLine(url: "https://api.twitter.com/1.1/statuses/home_timeline.json", callback: { (tweets) in
+                callback(tweets)
             })
-        } else {
-            self.updateTimeLine(callback: callback)
         }
     }
+    
+    func getUser(callback: @escaping UserCallback) {
+        self.getOAuthUser { (newUser) in
+            guard let user = newUser else { fatalError("No User") }
+                callback(user)
+        }
+    }
+    
+//    func getTweetsFor(_ user: String, callback: @escaping TweetsCallback) {
+//        
+//        let urlString = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(user)"
+//        
+//        self.updateTimeLine(url: urlString) { (tweets) in
+//            callback(tweets)
+//        }
+//    }
 }

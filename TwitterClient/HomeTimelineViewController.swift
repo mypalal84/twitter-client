@@ -20,7 +20,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
+    var profile: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +35,19 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
+        
+        self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
+        
         updateTimeline()
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        if segue.identifier == "showDetailSegue" {
+        if segue.identifier == TweetDetailViewController.identifier {
             
         if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
             let selectedTweet = self.tweetArray[selectedIndex]
@@ -54,10 +60,11 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
             
         }
         
-        if segue.identifier == "showProfileSegue" {
+        if segue.identifier == ProfileViewController.identifier {
             
-            //guard let destinationConroller = segue.destination as? ProfileViewController else { return }
+            guard let destinationConroller = segue.destination as? ProfileViewController else { return }
             
+            destinationConroller.user = self.profile
         }
         
     }
@@ -68,11 +75,27 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         self.activityIndicator.startAnimating()
         
         API.shared.getTweets { (tweets) in
+            
+            guard let tweets = tweets else { fatalError("No Tweets") }
+            
+        API.shared.getUser(callback: { (newUser) in
+            
+            guard let user = newUser else { fatalError("No Profile") }
+            
             OperationQueue.main.addOperation {
-                self.tweetArray = tweets  ?? []
+                
+                self.profile = user
+                
+            }
+        })
+            
+            OperationQueue.main.addOperation {
+                
+                self.tweetArray = tweets  
+                
                 self.activityIndicator.stopAnimating()
             }
-        }        
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,15 +104,20 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TweetCell
-            
-            cell.tweetText.text = tweetArray[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier, for: indexPath) as! TweetNibCell
+        
+//            cell.tweetText.text = tweetArray[indexPath.row].text
+        
+            let tweet = self.tweetArray[indexPath.row]
+        
+            cell.tweet = tweet
         
             return cell
     }
     
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected row at \(indexPath.row)")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: TweetDetailViewController.identifier, sender: nil)
+        
     }
- */
 }
