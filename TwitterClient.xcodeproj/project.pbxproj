@@ -10,6 +10,9 @@
 		7F0D518E1E844DE700D9683B /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D518D1E844DE700D9683B /* UIExtensions.swift */; };
 		7F0D51D51E8467DA00D9683B /* TweetNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D51D31E8467DA00D9683B /* TweetNibCell.swift */; };
 		7F0D51D61E8467DA00D9683B /* TweetNibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D51D41E8467DA00D9683B /* TweetNibCell.xib */; };
+		7F96FDE01E8583F5006D3C17 /* twitter_icon_JPEG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F96FDDD1E8583F5006D3C17 /* twitter_icon_JPEG.jpg */; };
+		7F96FDE11E8583F5006D3C17 /* twitter_icon_JPEG@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F96FDDE1E8583F5006D3C17 /* twitter_icon_JPEG@2x.jpg */; };
+		7F96FDE21E8583F5006D3C17 /* twitter_icon_JPEG@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F96FDDF1E8583F5006D3C17 /* twitter_icon_JPEG@3x.jpg */; };
 		7F9B51191E803F5E00F21727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B51181E803F5E00F21727 /* AppDelegate.swift */; };
 		7F9B511E1E803F5E00F21727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B511C1E803F5E00F21727 /* Main.storyboard */; };
 		7F9B51201E803F5E00F21727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B511F1E803F5E00F21727 /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 		7F0D518D1E844DE700D9683B /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = TwitterClient/UIExtensions.swift; sourceTree = "<group>"; };
 		7F0D51D31E8467DA00D9683B /* TweetNibCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetNibCell.swift; sourceTree = "<group>"; };
 		7F0D51D41E8467DA00D9683B /* TweetNibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetNibCell.xib; sourceTree = "<group>"; };
+		7F96FDDD1E8583F5006D3C17 /* twitter_icon_JPEG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = twitter_icon_JPEG.jpg; path = "../../../../../Downloads/ios 2/twitter_icon_JPEG.jpg"; sourceTree = "<group>"; };
+		7F96FDDE1E8583F5006D3C17 /* twitter_icon_JPEG@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter_icon_JPEG@2x.jpg"; path = "../../../../../Downloads/ios 2/twitter_icon_JPEG@2x.jpg"; sourceTree = "<group>"; };
+		7F96FDDF1E8583F5006D3C17 /* twitter_icon_JPEG@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter_icon_JPEG@3x.jpg"; path = "../../../../../Downloads/ios 2/twitter_icon_JPEG@3x.jpg"; sourceTree = "<group>"; };
 		7F9B51151E803F5E00F21727 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9B51181E803F5E00F21727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = TwitterClient/AppDelegate.swift; sourceTree = "<group>"; };
 		7F9B511D1E803F5E00F21727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 				7F9B51351E808E1800F21727 /* Views */,
 				7F9B51361E808E2400F21727 /* Models */,
 				7F9B511F1E803F5E00F21727 /* Assets.xcassets */,
+				7F96FDDD1E8583F5006D3C17 /* twitter_icon_JPEG.jpg */,
+				7F96FDDE1E8583F5006D3C17 /* twitter_icon_JPEG@2x.jpg */,
+				7F96FDDF1E8583F5006D3C17 /* twitter_icon_JPEG@3x.jpg */,
 				7F9B51241E803F5E00F21727 /* Info.plist */,
 			);
 			path = TwitterClient;
@@ -156,6 +165,7 @@
 				TargetAttributes = {
 					7F9B51141E803F5E00F21727 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 22M99K8B7F;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -185,8 +195,11 @@
 			files = (
 				7F9B51231E803F5E00F21727 /* LaunchScreen.storyboard in Resources */,
 				7F9B51201E803F5E00F21727 /* Assets.xcassets in Resources */,
+				7F96FDE21E8583F5006D3C17 /* twitter_icon_JPEG@3x.jpg in Resources */,
 				7F0D51D61E8467DA00D9683B /* TweetNibCell.xib in Resources */,
+				7F96FDE11E8583F5006D3C17 /* twitter_icon_JPEG@2x.jpg in Resources */,
 				7F9B511E1E803F5E00F21727 /* Main.storyboard in Resources */,
+				7F96FDE01E8583F5006D3C17 /* twitter_icon_JPEG.jpg in Resources */,
 				7F9B512B1E8052B000F21727 /* tweet.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,11 +346,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 22M99K8B7F;
 				INFOPLIST_FILE = TwitterClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexcahn.TwitterClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -345,11 +360,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 22M99K8B7F;
 				INFOPLIST_FILE = TwitterClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexcahn.TwitterClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
