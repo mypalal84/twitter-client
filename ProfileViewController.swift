@@ -16,14 +16,20 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var location: UILabel!
 
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         name.text = "Username: \(user.screenName)"
+        
+        UIImage.fetchImageWith((self.user?.profileImageURL)!) { (image) in
+            self.profileImage.image = image
+        }
+        
         location.text = "Location: \(user.location)"
         
     }
-    
-    
+   
 }

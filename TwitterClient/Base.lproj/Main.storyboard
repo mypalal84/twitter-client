@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -190,16 +191,23 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prl-p0-q6U">
                                 <rect key="frame" x="0.0" y="-16" width="375" height="44"/>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="userImage" translatesAutoresizingMaskIntoConstraints="NO" id="vQl-h2-TbJ">
+                                <rect key="frame" x="24" y="247" width="199" height="167"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ekU-2x-FWF" firstAttribute="height" secondItem="Imq-Gs-0k4" secondAttribute="height" multiplier="0.25" id="2LV-C7-FLq"/>
                             <constraint firstItem="IcL-RR-cxW" firstAttribute="width" secondItem="Imq-Gs-0k4" secondAttribute="width" multiplier="0.9" id="4OQ-Gl-F2x"/>
                             <constraint firstItem="IcL-RR-cxW" firstAttribute="centerX" secondItem="Imq-Gs-0k4" secondAttribute="centerX" id="7nH-56-cBB"/>
+                            <constraint firstItem="vQl-h2-TbJ" firstAttribute="leading" secondItem="Imq-Gs-0k4" secondAttribute="leadingMargin" constant="8" id="KiJ-Fl-A4n"/>
+                            <constraint firstItem="ekU-2x-FWF" firstAttribute="top" secondItem="vQl-h2-TbJ" secondAttribute="bottom" constant="8" id="PCM-rx-5PH"/>
                             <constraint firstItem="IcL-RR-cxW" firstAttribute="top" secondItem="YvK-6L-67u" secondAttribute="bottom" constant="8" id="QJv-fZ-RHE"/>
                             <constraint firstItem="Mks-Zi-3ha" firstAttribute="top" secondItem="ekU-2x-FWF" secondAttribute="bottom" constant="78" id="Yr9-VN-Rmj"/>
                             <constraint firstItem="ekU-2x-FWF" firstAttribute="width" secondItem="Imq-Gs-0k4" secondAttribute="width" multiplier="0.9" id="al4-Lp-jDP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vQl-h2-TbJ" secondAttribute="trailing" constant="136" id="cFD-Rk-KuH"/>
                             <constraint firstItem="ekU-2x-FWF" firstAttribute="centerX" secondItem="Prl-p0-q6U" secondAttribute="centerX" id="fok-HQ-WMM"/>
+                            <constraint firstItem="vQl-h2-TbJ" firstAttribute="top" secondItem="IcL-RR-cxW" secondAttribute="bottom" constant="8" id="jWv-mH-3di"/>
                             <constraint firstItem="IcL-RR-cxW" firstAttribute="height" secondItem="Imq-Gs-0k4" secondAttribute="height" multiplier="0.25" id="pPx-GG-KOr"/>
                             <constraint firstItem="ekU-2x-FWF" firstAttribute="centerX" secondItem="Imq-Gs-0k4" secondAttribute="centerX" id="sgT-Pz-kX9"/>
                             <constraint firstItem="Prl-p0-q6U" firstAttribute="leading" secondItem="Imq-Gs-0k4" secondAttribute="leading" id="tWz-5H-4N1"/>
@@ -209,11 +217,12 @@
                     <connections>
                         <outlet property="location" destination="ekU-2x-FWF" id="Yde-dO-8Ng"/>
                         <outlet property="name" destination="IcL-RR-cxW" id="ICv-y2-qez"/>
+                        <outlet property="profileImage" destination="vQl-h2-TbJ" id="rQD-xa-vkJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9k-wz-FeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="-637"/>
+            <point key="canvasLocation" x="1805.5999999999999" y="-637.33133433283365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2P7-tn-jEX">
