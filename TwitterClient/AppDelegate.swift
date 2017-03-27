@@ -40,5 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3c145de671e9f372295b37fadcb278d2733fec14
 }
 
