@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b8r-uX-vlM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b8r-uX-vlM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,18 +27,7 @@
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="hYI-f0-1bY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter_icon_JPEG.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="69T-Aa-nG7">
-                                            <rect key="frame" x="8" y="0.0" width="359" height="94"/>
-                                        </imageView>
-                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="69T-Aa-nG7" firstAttribute="leading" secondItem="hYI-f0-1bY" secondAttribute="leading" constant="8" id="1Ud-VL-qPs"/>
-                                        <constraint firstItem="69T-Aa-nG7" firstAttribute="top" secondItem="hYI-f0-1bY" secondAttribute="top" id="47Q-oU-YyR"/>
-                                        <constraint firstAttribute="bottom" secondItem="69T-Aa-nG7" secondAttribute="bottom" id="Fdk-3R-WFY"/>
-                                        <constraint firstAttribute="trailing" secondItem="69T-Aa-nG7" secondAttribute="trailing" constant="8" id="Gdo-SQ-zIj"/>
-                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="t1x-Gh-efH" customClass="TweetCell" customModule="TwitterClient" customModuleProvider="target">
@@ -244,7 +233,4 @@
             <point key="canvasLocation" x="32.799999999999997" y="53.523238380809602"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="twitter_icon_JPEG.jpg" width="337" height="341"/>
-    </resources>
 </document>
