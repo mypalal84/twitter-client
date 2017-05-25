@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		7F0D518E1E844DE700D9683B /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D518D1E844DE700D9683B /* UIExtensions.swift */; };
 		7F0D51D51E8467DA00D9683B /* TweetNibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D51D31E8467DA00D9683B /* TweetNibCell.swift */; };
 		7F0D51D61E8467DA00D9683B /* TweetNibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D51D41E8467DA00D9683B /* TweetNibCell.xib */; };
@@ -44,6 +45,7 @@
 		7FEA57521E8318FE00116E1D /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetDetailViewController.swift; path = TwitterClient/TweetDetailViewController.swift; sourceTree = "<group>"; };
 		7FEA57541E8328B400116E1D /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetCell.swift; path = TwitterClient/TweetCell.swift; sourceTree = "<group>"; };
 		7FEA57561E83560200116E1D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		7F9B51171E803F5E00F21727 /* TwitterClient */ = {
 			isa = PBXGroup;
 			children = (
+
 				7F9B51341E808E0700F21727 /* Controllers */,
 				7F9B51351E808E1800F21727 /* Views */,
 				7F9B51361E808E2400F21727 /* Models */,
@@ -85,6 +88,7 @@
 			path = TwitterClient;
 			sourceTree = "<group>";
 		};
+
 		7F9B51341E808E0700F21727 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +226,9 @@
 				7F9B511D1E803F5E00F21727 /* Base */,
 			);
 			name = Main.storyboard;
+
 			path = TwitterClient;
+
 			sourceTree = "<group>";
 		};
 		7F9B51211E803F5E00F21727 /* LaunchScreen.storyboard */ = {
@@ -231,7 +237,9 @@
 				7F9B51221E803F5E00F21727 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+
 			path = TwitterClient;
+
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
