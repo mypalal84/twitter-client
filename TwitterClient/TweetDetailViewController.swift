@@ -31,8 +31,5 @@ class TweetDetailViewController: UIViewController {
         } else {
             self.retweetDetails.text = "Retweet Count: \(tweet.retweetCount)"
         }
-            
-
     }
-
 }
