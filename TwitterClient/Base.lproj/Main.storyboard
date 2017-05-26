@@ -24,7 +24,20 @@
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="hYI-f0-1bY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="1TL-OE-pcY">
+                                            <rect key="frame" x="125.5" y="-25" width="125" height="125"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="125" id="7h9-Cx-CkI"/>
+                                                <constraint firstAttribute="width" constant="125" id="BR1-oc-IU5"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="1TL-OE-pcY" firstAttribute="top" secondItem="hYI-f0-1bY" secondAttribute="top" constant="-25" id="RUz-GQ-kVd"/>
+                                        <constraint firstItem="1TL-OE-pcY" firstAttribute="centerX" secondItem="hYI-f0-1bY" secondAttribute="centerX" id="Xfi-fa-xmX"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="t1x-Gh-efH" customClass="TweetCell" customModule="TwitterClient" customModuleProvider="target">
@@ -230,5 +243,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="53.523238380809602"/>
         </scene>
     </scenes>
-   <resources>
+    <resources>
+        <image name="twitter" width="170" height="170"/>
+    </resources>
 </document>
